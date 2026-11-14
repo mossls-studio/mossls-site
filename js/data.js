@@ -297,6 +297,12 @@ window.MOSSLS = {
         zh: "写代码，也管设计。做工具的时候最在意「点下去的那一下」顺不顺手。",
         en: "Codes, designs, and cares most about how that one click feels."
       }
+    },
+    {
+      name: "Lonelnx_BianJIe",
+      roleKey: "team.role2",
+      avatar: "https://avatars.githubusercontent.com/u/281612827?v=4&s=240",
+      github: "https://github.com/bingkunwang01-cmd"
     }
   ]
 };
