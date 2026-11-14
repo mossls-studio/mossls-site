@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>mossls — 全部项目</title>
+<meta name="description" content="mossls 的全部项目，可按类型、适用软件筛选。">
+<meta name="theme-color" content="#fff7ee">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/app-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body data-page="all">
+<a class="skip" href="#main" data-i18n="a11y.skip">跳到主要内容</a>
+
+<div class="nav-shell">
+  <header class="nav site-header">
+    <a class="brand" href="index.html">
+      <img class="brand__logo" src="assets/logo-mark.png" alt="mossls" width="720" height="409">
+      <span class="brand__text"><strong>mossls</strong></span>
+    </a>
+
+    <form class="nav__search" id="navSearch" role="search" action="all.html" method="get" autocomplete="off">
+      <svg class="nav__searchico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.6"/><path d="M16 16l4.4 4.4"/></svg>
+      <input class="nav__searchinput" id="navQ" type="search" name="q" enterkeyhint="search" autocomplete="off" spellcheck="false" aria-label="Search" data-i18n-placeholder="search.placeholder" data-i18n-aria="search.label">
+    </form>
+
+    <div class="lang" id="lang">
+      <button class="lang__btn" id="langBtn" type="button" aria-expanded="false" aria-haspopup="listbox" data-i18n-aria="nav.language">
+        <svg class="lang__globe" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2.2 2.1 3.4 4.7 3.4 7.5S12.2 15.4 10 17.5C7.8 15.4 6.6 12.8 6.6 10S7.8 4.6 10 2.5z"/></svg>
+        <span id="langCurrent">中文</span>
+        <span class="lang__code" id="langCode">ZH</span>
+      </button>
+      <ul class="lang__menu" id="langMenu" role="listbox"></ul>
+    </div>
+  </header>
+</div>
+
+<main class="page page-all" id="main">
+  <header class="all-head">
+    <h1 class="all-head__title" data-i18n="all.title">全部项目</h1>
+    <p class="all-head__sub" data-i18n="all.sub">全部都在这里，每次打开顺序都不一样。</p>
+
+    <form class="all-search" id="allSearch" role="search" autocomplete="off">
+      <svg class="all-search__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.6"/><path d="M16 16l4.4 4.4"/></svg>
+      <input class="all-search__input" id="allQ" type="search" autocomplete="off" spellcheck="false" aria-label="Search" data-i18n-placeholder="search.all" data-i18n-aria="search.label">
+      <button class="all-search__go" type="submit" data-i18n="search.go">搜索</button>
+    </form>
+
+    <div class="all-facets" id="allFacets"></div>
+    <p class="all-count" id="allCount"></p>
+  </header>
+
+  <div class="grid grid--all" id="allGrid"></div>
+  <p class="all-empty" id="allEmpty" hidden data-i18n="search.empty">没有找到相关项目。</p>
+</main>
+
+<footer class="footer">
+  <div class="footer__top">
+    <div>
+      <p class="footer__big">mossls</p>
+      <p class="footer__tag" data-i18n="footer.tagline">小而好用的工具，一起做。</p>
+    </div>
+    <div class="footer__links">
+      <a href="https://github.com/KOGGUA-EDIT" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="index.html" data-i18n="nav.home">首页</a>
+      <a href="team.html" data-i18n="nav.team">团队</a>
+      <a href="#main">Top ↑</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> mossls</span>
+    <span data-i18n="footer.rights">保留所有权利。</span>
+  </div>
+</footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
