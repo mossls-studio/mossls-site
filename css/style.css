@@ -1997,3 +1997,58 @@ html[lang="ar"] .wordmark { letter-spacing: -.02em; }
   .grid > .card:first-child + .card--soon:last-child { grid-column: span 2; flex-direction: row; text-align: start; gap: 22px; }
   .grid > .card:first-child + .card--soon:last-child .soon__stickers { display: none; }
 }
+
+/* =========================================================
+   Hero logo motion — quiet, Apple-style
+   Original vector (assets/logo.svg) is drawn untouched; a narrow
+   cyan-white sheen passes over it every 6 s, clipped to the folds.
+   ========================================================= */
+
+.logo-stage {
+  position: relative;
+  width: min(100%, 640px);
+  opacity: 0;
+  animation: logoIn .8s ease-in-out .1s forwards;
+}
+@keyframes logoIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.logo3d {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform: perspective(1100px) rotateX(0deg) rotateY(0deg);
+  transition: transform .7s ease-in-out;
+}
+
+/* the light: moves only via transform; screen blend keeps each fold's own shading */
+.sheen-layer { mix-blend-mode: screen; }
+.sheen {
+  opacity: 0;
+  transform: translateX(0);
+  animation: logoSheen 6s ease-in-out 1.3s infinite;
+}
+@keyframes logoSheen {
+  0%   { transform: translateX(0);      opacity: 0; }
+  4%   { opacity: 1; }
+  30%  { opacity: 1; }
+  34%  { transform: translateX(1500px); opacity: 0; }
+  100% { transform: translateX(1500px); opacity: 0; }
+}
+
+/* hover tilt — desktop pointers only, max 2° */
+@media (hover: hover) and (pointer: fine) {
+  .hero__mark:hover .logo3d { transform: perspective(1100px) rotateX(1.2deg) rotateY(-2deg); }
+}
+
+/* the wordmark and its rule are never part of the light */
+.wordmark span { animation-delay: calc(.5s + var(--i, 0) * .05s); }
+.wordmark__rule path { animation-delay: .85s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-stage { opacity: 1; animation: none; }
+  .sheen { animation: none !important; opacity: 0 !important; }
+  .logo3d, .hero__mark:hover .logo3d { transition: none; transform: none; }
+}

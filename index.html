@@ -19,7 +19,7 @@
 <a class="skip" href="#main" data-i18n="a11y.skip">跳到主要内容</a>
 
 <div class="nav-shell">
-  <header class="nav site-header hero-in" style="--hd:1.15s">
+  <header class="nav site-header hero-in" style="--hd:.25s">
     <a class="brand" href="team.html">
       <img class="brand__logo" src="assets/logo-mark.png" alt="mossls" width="720" height="326">
       <span class="brand__text"><strong>mossls</strong></span>
@@ -44,15 +44,33 @@
 <main id="main">
   <section class="hero">
     <div class="hero__mark">
-      <svg class="logodraw" viewBox="20 225 1040 590" role="img" aria-label="mossls">
-        <defs>
-          <mask id="logoReveal" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1080">
-            <rect width="1080" height="1080" fill="#000"/>
-            <path class="draw-path" d="M104 700 L366 302 L646 652 L856 404 L956 700" fill="none" stroke="#fff" stroke-width="300" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
-          </mask>
-        </defs>
-        <image href="assets/logo.png" x="0" y="0" width="1080" height="1080" mask="url(#logoReveal)"/>
-      </svg>
+      <div class="logo-stage">
+        <svg class="logo3d" viewBox="20 225 1040 590" role="img" aria-label="mossls">
+          <defs>
+            <!-- outlines of the five folds, taken verbatim from assets/logo.svg; used only to keep the light inside the logo -->
+            <clipPath id="logoShape">
+            <path d="M92.699 734.672 L263.989 734.672 C286.235 734.672 301.807 723.491 315.154 696.658 L365.973 590.624 C365.973 590.624 196.857 670.253 118.254 718.523 C109.667 723.796 92.699 734.672 92.699 734.672 Z"/>
+            <polygon points="707.291,560.072 595.547,734.672 586.235,734.672 528.035,702.08 441.899,567.056 623.43,480.858"/>
+            <path d="M771.725 605.519 L897.437 423.935 C906.749 437.903 913.733 458.855 920.717 486.791 L974.261 647.423 L825.269 647.423 C801.989 647.423 788.021 631.127 771.725 605.519 Z"/>
+            <path d="M92.699 734.672 L318.515 336.584 C332.483 310.976 353.435 294.68 381.371 294.68 L430.259 294.68 C455.867 294.68 472.163 303.992 488.459 322.616 L623.483 480.92 Z"/>
+            <path d="M528.035 702.08 L728.243 427.376 C746.867 404.096 772.475 392.456 802.739 392.456 L842.315 392.456 C867.923 392.456 884.219 404.096 898.187 425.048 L728.243 695.096 C711.947 723.032 686.339 734.672 651.419 734.672 L586.235 734.672 C560.627 734.672 542.003 725.36 528.035 702.08 Z"/>
+            </clipPath>
+            <linearGradient id="sheenGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#e6fffb" stop-opacity="0"/>
+              <stop offset=".38" stop-color="#e6fffb" stop-opacity="0"/>
+              <stop offset=".5" stop-color="#f4fffe" stop-opacity=".62"/>
+              <stop offset=".62" stop-color="#e6fffb" stop-opacity="0"/>
+              <stop offset="1" stop-color="#e6fffb" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <image href="assets/logo.svg" x="0" y="0" width="1080" height="1080"/>
+          <g class="sheen-layer" clip-path="url(#logoShape)" aria-hidden="true">
+            <g transform="rotate(16 540 540)">
+              <rect class="sheen" x="-330" y="-240" width="260" height="1560" fill="url(#sheenGrad)"/>
+            </g>
+          </g>
+        </svg>
+      </div>
       <span class="spark spark--a" aria-hidden="true">✦</span>
       <span class="spark spark--b" aria-hidden="true">✦</span>
       <span class="spark spark--c" aria-hidden="true">●</span>
@@ -71,13 +89,13 @@
           <path d="M5 12c110-7 300-9 530-4" stroke="url(#ruleGrad)" stroke-width="7" stroke-linecap="round" pathLength="1"/>
         </svg>
       </div>
-      <p class="hero__tagline hero-in" style="--hd:2.1s" data-i18n="hero.tagline">小而好用的工具，一群慢慢打磨的人。</p>
-      <div class="hero__actions hero-in" style="--hd:2.2s">
+      <p class="hero__tagline hero-in" style="--hd:.95s" data-i18n="hero.tagline">小而好用的工具，一群慢慢打磨的人。</p>
+      <div class="hero__actions hero-in" style="--hd:1.02s">
         <a class="btn btn--primary" href="#sections"><span data-i18n="hero.cta">看看产品</span><svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v14M6 12l6 6 6-6"/></svg></a>
         <a class="btn" href="team.html" data-i18n="hero.team">认识我们</a>
       </div>
-      <div class="hero__chips hero-in" id="heroChips" style="--hd:2.3s"></div>
-      <p class="hero__meta hero-in" id="heroMeta" style="--hd:2.35s"></p>
+      <div class="hero__chips hero-in" id="heroChips" style="--hd:1.08s"></div>
+      <p class="hero__meta hero-in" id="heroMeta" style="--hd:1.12s"></p>
     </div>
 
     <a class="hero__scroll" href="#sections"><span data-i18n="hero.scroll">向下滚动</span><span class="hero__scrollline"></span></a>
