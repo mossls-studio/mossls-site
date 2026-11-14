@@ -67,7 +67,7 @@ window.I18N = {
     "team.v2d": "重新设计常用工具，将他们与速度和美感相结合，重建现代化工具！",
     "team.members": "成员",
     "team.role": "创始人 · 开发",
-    "team.role2": "共同创作者",
+    "team.role2": "创始人",
     "team.cta": "一起做点东西",
     "team.ctaSub": "所有项目都在 GitHub 上，issue 和 PR 都欢迎。",
     "card.soon": "更多在路上",
@@ -137,7 +137,7 @@ window.I18N = {
     "team.v2d": "Redesign the tools we use every day — speed and beauty together — and rebuild them for the modern age.",
     "team.members": "Members",
     "team.role": "Founder · Developer",
-    "team.role2": "Co-creator",
+    "team.role2": "Founder",
     "team.cta": "Let's build something",
     "team.ctaSub": "Every project is on GitHub. Issues and pull requests are welcome.",
     "card.soon": "More on the way",
@@ -207,7 +207,7 @@ window.I18N = {
     "team.v2d": "Rediseñar las herramientas de cada día —velocidad y belleza juntas— y reconstruirlas para la era moderna.",
     "team.members": "Miembros",
     "team.role": "Fundador · Desarrollador",
-    "team.role2": "Cocreador",
+    "team.role2": "Fundador",
     "team.cta": "Hagamos algo juntos",
     "team.ctaSub": "Todos los proyectos están en GitHub. Issues y pull requests son bienvenidos.",
     "card.soon": "Más en camino",
@@ -277,7 +277,7 @@ window.I18N = {
     "team.v2d": "Заново спроектировать повседневные инструменты — скорость и красота вместе — и пересобрать их для современности.",
     "team.members": "Участники",
     "team.role": "Основатель · Разработчик",
-    "team.role2": "Соавтор",
+    "team.role2": "Основатель",
     "team.cta": "Давайте сделаем что-нибудь",
     "team.ctaSub": "Все проекты на GitHub. Issues и pull requests приветствуются.",
     "card.soon": "Скоро будет больше",
@@ -347,7 +347,7 @@ window.I18N = {
     "team.v2d": "Repenser les outils du quotidien — vitesse et beauté réunies — et les reconstruire pour aujourd'hui.",
     "team.members": "Membres",
     "team.role": "Fondateur · Développeur",
-    "team.role2": "Co-créateur",
+    "team.role2": "Fondateur",
     "team.cta": "Construisons quelque chose",
     "team.ctaSub": "Tous les projets sont sur GitHub. Issues et pull requests sont bienvenues.",
     "card.soon": "D'autres arrivent",
@@ -417,7 +417,7 @@ window.I18N = {
     "team.v2d": "إعادة تصميم الأدوات اليومية — السرعة والجمال معًا — وإعادة بنائها بما يليق بالعصر.",
     "team.members": "الأعضاء",
     "team.role": "المؤسس · المطوّر",
-    "team.role2": "شريك في الإبداع",
+    "team.role2": "مؤسس",
     "team.cta": "لنصنع شيئًا معًا",
     "team.ctaSub": "كل المشاريع على GitHub. الـ issues والـ pull requests مرحّب بها.",
     "card.soon": "المزيد في الطريق",
@@ -429,3 +429,4 @@ window.I18N = {
     "a11y.skip": "انتقل إلى المحتوى"
   }
 };
+
