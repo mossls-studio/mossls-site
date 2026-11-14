@@ -1716,3 +1716,106 @@ html[lang="ar"] {
 }
 html[lang="ar"] body { line-height: 1.8; }
 html[lang="ar"] .wordmark { letter-spacing: -.02em; }
+
+/* =========================================================
+   v1.1 polish — real screenshots on covers, calmer hero
+   ========================================================= */
+
+/* card cover: screenshot sits in the gradient like an app window */
+.cover__shot {
+  position: absolute;
+  inset-block-start: 15%;
+  inset-inline-start: 9%;
+  width: 86%;
+  aspect-ratio: 16 / 10;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: #0f0e0c;
+  overflow: hidden;
+  box-shadow: 0 7px 0 rgba(18, 16, 14, .82);
+  transform: rotate(-2.2deg);
+  transform-origin: 20% 100%;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.cover__shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform .6s var(--ease);
+}
+.card:hover .cover__shot { transform: rotate(0deg) translateY(-6px); box-shadow: 0 12px 0 rgba(18, 16, 14, .82); }
+.card:hover .cover__shot img { transform: scale(1.04); }
+
+.cover__badge {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-end: 14px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(34px, 9cqw, 46px);
+  aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  border-radius: 30%;
+  background: #fff;
+  box-shadow: 0 3px 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(15px, 4cqw, 20px);
+  font-weight: 900;
+  transform: rotate(6deg);
+}
+.cover__cat { z-index: 2; }
+
+@container (min-width: 520px) {
+  .cover__shot { width: 62%; inset-inline-start: 19%; inset-block-start: 12%; }
+}
+
+/* product cover with a real screenshot */
+.prod-cover--shot { aspect-ratio: 16 / 11; }
+.prod-cover__shot {
+  position: absolute;
+  inset-block-start: 11%;
+  inset-inline-start: 7%;
+  width: 86%;
+  aspect-ratio: 16 / 10;
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f0e0c;
+  box-shadow: 0 10px 0 rgba(18, 16, 14, .85);
+  transform: rotate(-2deg);
+}
+.prod-cover__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.prod-cover__badge {
+  position: absolute;
+  inset-block-start: 16px;
+  inset-inline-end: 18px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  border-radius: 30%;
+  background: #fff;
+  box-shadow: 0 4px 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  transform: rotate(6deg);
+}
+.prod-cover__name { z-index: 2; }
+
+/* hero: tagline under the wordmark, tighter screen, readable meta */
+.hero { min-height: min(calc(100svh - 96px), 760px); }
+.hero__tagline { max-width: 22em; margin-inline: auto; color: var(--ink); }
+.hero__actions .btn { padding: 15px 26px; font-size: 15.5px; }
+.hero__meta { font-size: 13px; }
+
+/* cards: slightly calmer tag text, nicer description rhythm */
+.card__tag { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.9em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cover__shot, .cover__shot img { transition: none; }
+}

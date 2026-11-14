@@ -260,8 +260,11 @@
       ";--rd:" + (i * 0.07).toFixed(2) + 's">' +
       '<span class="card__cover">' +
         '<span class="cover__dots"></span>' +
-        '<span class="cover__num">' + pad2(pIndex(p)) + "</span>" +
-        '<span class="cover__tile">' + esc(p.initial) + "</span>" +
+        (p.shots && p.shots.length
+          ? '<span class="cover__shot"><img src="' + esc(p.shots[0]) + '" alt="" loading="lazy" decoding="async"></span>' +
+            '<span class="cover__badge">' + esc(p.initial) + "</span>"
+          : '<span class="cover__num">' + pad2(pIndex(p)) + "</span>" +
+            '<span class="cover__tile">' + esc(p.initial) + "</span>") +
         '<span class="cover__cat">' + esc(t(cat.labelKey)) + "</span>" +
       "</span>" +
       '<span class="card__body">' +
@@ -559,9 +562,12 @@
     var related = DATA.products.filter(function (x) { return x.id !== p.id && x.category === p.category; }).slice(0, 3);
 
     root.innerHTML = '<header class="prod-head">' +
-        '<div class="prod-cover" style="--c1:' + p.c1 + ";--c2:" + p.c2 + '">' +
-          '<span class="prod-cover__num">' + pad2(pIndex(p)) + "</span>" +
-          '<span class="prod-cover__tile">' + esc(p.initial) + "</span>" +
+        '<div class="prod-cover' + (p.shots && p.shots.length ? " prod-cover--shot" : "") + '" style="--c1:' + p.c1 + ";--c2:" + p.c2 + '">' +
+          (p.shots && p.shots.length
+            ? '<span class="prod-cover__shot"><img src="' + esc(p.shots[0]) + '" alt="' + esc(pName(p)) + '" decoding="async"></span>' +
+              '<span class="prod-cover__badge">' + esc(p.initial) + "</span>"
+            : '<span class="prod-cover__num">' + pad2(pIndex(p)) + "</span>" +
+              '<span class="prod-cover__tile">' + esc(p.initial) + "</span>") +
           '<span class="prod-cover__name">' + esc(pName(p)) + "</span>" +
         "</div>" +
         '<div class="prod-info">' +
@@ -589,6 +595,7 @@
         "<h2>" + esc(t("common.related")) + "</h2>" +
         '<div class="grid">' + related.map(cardHTML).join("") + "</div>" +
       "</section>" : "");
+    observeReveals();
   }
 
   /* ---------------- team ---------------- */
