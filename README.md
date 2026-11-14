@@ -83,8 +83,8 @@ python -m http.server 8123
 
 ## 部署
 
-线上地址：**https://koggua-edit.github.io/mossls-site/**
-（仓库：`KOGGUA-EDIT/mossls-site`，Pages 用 `main` 分支根目录，`.nojekyll` 已就位）
+线上地址：**https://mossls-studio.github.io/mossls-site/**
+（仓库：`mossls-studio/mossls-site`，Pages 用 `main` 分支根目录，`.nojekyll` 已就位）
 
 这台机器直连 github.com 的 git 通道会被重置，所以**改完用脚本发布**：
 
