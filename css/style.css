@@ -1819,3 +1819,40 @@ html[lang="ar"] .wordmark { letter-spacing: -.02em; }
 @media (prefers-reduced-motion: reduce) {
   .cover__shot, .cover__shot img { transition: none; }
 }
+
+/* ---------- dopamine accents ---------- */
+
+/* highlighter swipe behind section titles, in each section's accent */
+.section__title {
+  display: inline;
+  background: linear-gradient(transparent 58%, var(--acc-soft, var(--lime)) 58%, var(--acc-soft, var(--lime)) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-inline: .06em;
+}
+.members h2, .related h2 {
+  display: inline-block;
+  background: linear-gradient(transparent 60%, var(--lime) 60%, var(--lime) 92%, transparent 92%);
+  padding-inline: .08em;
+}
+
+/* cards lift with a coloured shadow in their category accent */
+.card:hover { box-shadow: 9px 11px 0 var(--acc, var(--ink)); border-color: var(--ink); }
+.card:hover .card__name > span:first-child {
+  background: linear-gradient(transparent 62%, var(--acc-soft, var(--lime)) 62%);
+}
+
+/* member cards: candy shadow, avatar ring in brand gradient */
+.member { transition: transform .24s var(--ease), box-shadow .24s var(--ease); }
+.member:hover { transform: translate(-3px, -4px); box-shadow: 8px 10px 0 var(--pink); }
+.member img { box-shadow: 0 0 0 3px var(--paper-2), 0 0 0 6px var(--mint); }
+.member:nth-child(2n) img { box-shadow: 0 0 0 3px var(--paper-2), 0 0 0 6px var(--pink); }
+.member:nth-child(2n):hover { box-shadow: 8px 10px 0 var(--blue); }
+
+/* footer wordmark gets the brand gradient underline */
+.footer__big {
+  background: linear-gradient(90deg, #fff7ee 0 70%, #7ff0d4 85%, #d6ff4b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
