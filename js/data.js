@@ -31,6 +31,7 @@ window.MOSSLS = {
   products: [
     {
       id: "suko",
+    shots: ["assets/shots/suko-1.webp", "assets/shots/suko-2.webp"],
       name: "suko",
       initial: "S",
       repo: "suko",
@@ -61,6 +62,7 @@ window.MOSSLS = {
     },
     {
       id: "toolbox",
+    shots: ["assets/shots/toolbox-1.webp", "assets/shots/toolbox-2.webp"],
       name: "Toolbox Master",
       names: {
         zh: "工具箱大师",
@@ -99,6 +101,7 @@ window.MOSSLS = {
     },
     {
       id: "kcurve",
+    shots: ["assets/shots/kcurve-1.webp", "assets/shots/kcurve-2.webp"],
       name: "KCurve",
       initial: "K",
       repo: "KCurve",
@@ -129,6 +132,7 @@ window.MOSSLS = {
     },
     {
       id: "egroup",
+    shots: ["assets/shots/egroup-1.webp", "assets/shots/egroup-2.webp"],
       name: "Egroup",
       initial: "E",
       repo: "Egroup",
@@ -159,6 +163,7 @@ window.MOSSLS = {
     },
     {
       id: "sayaka",
+    shots: ["assets/shots/sayaka-1.webp", "assets/shots/sayaka-2.webp"],
       name: "dsh-pet-sayaka",
       initial: "D",
       repo: "dsh-pet-sayaka",
@@ -189,6 +194,7 @@ window.MOSSLS = {
     },
     {
       id: "fustimage",
+    shots: ["assets/shots/fustimage-1.webp", "assets/shots/fustimage-2.webp"],
       name: "Fustimage",
       initial: "F",
       repo: "Fustimage",
@@ -219,6 +225,7 @@ window.MOSSLS = {
     },
     {
       id: "muxvideo",
+    shots: ["assets/shots/muxvideo-1.webp", "assets/shots/muxvideo-2.webp", "assets/shots/muxvideo-3.webp"],
       name: "MuxVideo",
       initial: "M",
       repo: "MuxVideo",
@@ -249,6 +256,7 @@ window.MOSSLS = {
     },
     {
       id: "colorms",
+    shots: ["assets/shots/colorms-1.webp", "assets/shots/colorms-2.webp"],
       name: "Colorms",
       initial: "C",
       repo: "colorms",
@@ -292,3 +300,4 @@ window.MOSSLS = {
     }
   ]
 };
+

@@ -522,6 +522,19 @@
     "</div>";
   }
 
+  function shotImg(p, src) {
+    return '<div class="shot shot--img">' +
+      '<img src="' + esc(src) + '" alt="' + esc(pName(p)) + '" loading="lazy" decoding="async" width="1600" height="1000">' +
+    "</div>";
+  }
+
+  function shotsHTML(p) {
+    if (p.shots && p.shots.length) {
+      return p.shots.map(function (s) { return shotImg(p, s); }).join("");
+    }
+    return shotHTML(p) + shotHTML(p) + shotHTML(p);
+  }
+
   function renderProduct() {
     var root = $("#productRoot");
     if (!root) return;
@@ -570,7 +583,7 @@
         "<h2>" + esc(t("common.overview")) + "</h2>" +
         "<p>" + esc(pDesc(p)) + "</p>" +
         "<h2>" + esc(t("common.preview")) + "</h2>" +
-        '<div class="shots">' + shotHTML(p) + shotHTML(p) + shotHTML(p) + "</div>" +
+        '<div class="shots">' + shotsHTML(p) + "</div>" +
       "</div>" +
       (related.length ? '<section class="related">' +
         "<h2>" + esc(t("common.related")) + "</h2>" +

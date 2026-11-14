@@ -1533,6 +1533,17 @@ body[data-page="all"] .cover__num { display: none; }
   background: linear-gradient(135deg, var(--c1, var(--mint)), var(--c2, var(--blue)));
   overflow: hidden;
 }
+.shot.shot--img {
+  padding: 0;
+  background: #0f0e0c;
+  box-shadow: 0 6px 0 var(--ink);
+}
+.shot.shot--img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .shot__win {
   height: 100%;
   border: 2px solid var(--ink);
