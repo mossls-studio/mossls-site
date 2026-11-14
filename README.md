@@ -13,7 +13,7 @@ mossls 的静态官网：首页、集合页、产品详情页、团队页。纯 
 ## 目录
 
 ```
-mossls/
+mossls/site/
 ├── index.html          首页
 ├── all.html            集合页（全部项目 + 搜索 + 标签）
 ├── product.html        产品详情（?id=...）
@@ -29,13 +29,16 @@ mossls/
 │   ├── app-icon.png    黑色圆角图标（做 App icon / 社交头像用）
 │   ├── favicon.png     128px 图标
 │   └── avatar-koggua.webp
-└── _preview/           本地截图工具，不参与部署（已在 .gitignore）
+├── .nojekyll           让 Pages 跳过 Jekyll
+└── README.md
 ```
+
+原始素材（logo 源文件、成员头像原图、设计理念文档）放在上一级 `D:\mossls\`，不在站点目录里，不会被部署上去。
 
 ## 本地预览
 
 ```bash
-cd D:\mossls
+cd D:\mossls\site
 python -m http.server 8123
 # 打开 http://127.0.0.1:8123/
 ```
@@ -78,16 +81,21 @@ python -m http.server 8123
 
 替换 `assets/` 里的文件，名字保持一致即可。换 logo 时记得同时更新 `logo-mark.png`（团队页和 CTA 水印用的是裁切版）。
 
-## 部署到 GitHub Pages
+## 部署
 
-1. 在 GitHub 建好 org（比如 `mossls`）和仓库。
-2. 把 `D:\mossls` 里的站点文件推到仓库根目录（**不要**推 `_preview/`）。
-3. 仓库 Settings → Pages → Source 选 **Deploy from a branch** → `main` / `/ (root)`。
-4. 等一两分钟，访问 `https://<org>.github.io/<repo>/`。
-   仓库名如果叫 `<org>.github.io`，则直接是 `https://<org>.github.io/`。
-5. 之后每次 push 到 main，Pages 会自动重建。
+线上地址：**https://koggua-edit.github.io/mossls-site/**
+（仓库：`KOGGUA-EDIT/mossls-site`，Pages 用 `main` 分支根目录，`.nojekyll` 已就位）
 
-> 站点全部用相对路径，放在子目录（`/<repo>/`）下也能正常工作，不用改代码。
+这台机器直连 github.com 的 git 通道会被重置，所以**改完用脚本发布**：
+
+```powershell
+cd D:\mossls
+.\deploy.ps1 "改了首页文案"
+```
+
+脚本会读取 Windows 凭据管理器里的 GitHub token，把 `D:\mossls\site` 整份同步成**一个提交**（内容没变会跳过）。等 1 分钟左右刷新线上地址即可。
+
+如果以后 git 能正常连（挂代理 / 换网络），也可以走常规流程：`git clone` 到别处、改完 `git push`，Pages 会自动重建；当前这份本地目录里的 `.git` 只是历史快照，第一次用 git 前先 `git reset --hard origin/main` 对齐。
 
 ## 部署后要确认的几件事
 
