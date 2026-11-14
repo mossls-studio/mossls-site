@@ -41,11 +41,20 @@
 <main class="page" id="main">
   <a class="back" href="index.html">← <span data-i18n="common.back">返回首页</span></a>
 
-  <header class="team-head">
-    <img class="team-head__logo" src="assets/logo-mark.png" alt="mossls" width="720" height="409">
+  <header class="team-head team-head--split">
+    <div class="team-head__art">
+      <img class="team-head__logo" src="assets/logo-mark.png" alt="mossls" width="720" height="409">
+      <span class="spark spark--a" aria-hidden="true">✦</span>
+      <span class="spark spark--c" aria-hidden="true">●</span>
+    </div>
+    <div class="team-head__copy">
+      <h1 data-i18n="team.title">关于 mossls</h1>
+      <p class="lead" data-i18n="team.lead">我们做小而顺手的工具。</p>
+      <p class="team-head__p" data-i18n="team.p1"></p>
+    </div>
   </header>
 
-  <h1 class="team-values-title" data-i18n="team.values">设计理念</h1>
+  <h2 class="team-values-title" data-i18n="team.values">设计理念</h2>
 
   <div class="values">
     <article class="value" style="--vc:var(--pink)">
@@ -62,7 +71,7 @@
 
   <section class="members">
     <h2 data-i18n="team.members">成员</h2>
-    <div id="members"></div>
+    <div class="members__grid" id="members"></div>
   </section>
 
   <section class="cta">
