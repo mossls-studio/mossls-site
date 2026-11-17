@@ -1717,54 +1717,341 @@ html[lang="ar"] {
 html[lang="ar"] body { line-height: 1.8; }
 html[lang="ar"] .wordmark { letter-spacing: -.02em; }
 
-/* ---------- screenshot covers ---------- */
-.cover__bg {
+/* =========================================================
+   v1.1 polish — real screenshots on covers, calmer hero
+   ========================================================= */
+
+/* card cover: screenshot sits in the gradient like an app window */
+.cover__shot {
   position: absolute;
-  inset: -12%;
-  width: 124%;
-  height: 124%;
-  object-fit: cover;
-  filter: blur(30px) saturate(1.5) brightness(1.2);
-  transform: scale(1.06);
-  z-index: 0;
-}
-.cover__wash {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--c1), var(--c2));
-  mix-blend-mode: overlay;
-  opacity: .55;
-  z-index: 0;
-}
-.cover__veil {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    radial-gradient(125% 95% at 50% 42%, rgba(18, 16, 14, 0) 30%, rgba(18, 16, 14, .34) 100%),
-    linear-gradient(180deg, rgba(18, 16, 14, .02), rgba(18, 16, 14, .18));
-}
-.cover__tile, .cover__cat, .prod-cover__tile, .prod-cover__name { z-index: 3; }
-.cover__tile--img, .prod-cover__tile--img {
-  padding: 0;
+  inset-block-start: 15%;
+  inset-inline-start: 9%;
+  width: 86%;
+  aspect-ratio: 16 / 10;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  background: #0f0e0c;
   overflow: hidden;
+  box-shadow: 0 7px 0 rgba(18, 16, 14, .82);
+  transform: rotate(-2.2deg);
+  transform-origin: 20% 100%;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
 }
-.cover__tile--img img, .prod-cover__tile--img img {
+.cover__shot img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  object-position: top center;
+  transition: transform .6s var(--ease);
 }
-.cover__tile--hero, .prod-cover__tile--hero {
-  width: 50%;
-  background: transparent;
-  border: 0;
+.card:hover .cover__shot { transform: rotate(0deg) translateY(-6px); box-shadow: 0 12px 0 rgba(18, 16, 14, .82); }
+.card:hover .cover__shot img { transform: scale(1.04); }
+
+.cover__badge {
+  position: absolute;
+  inset-block-start: 12px;
+  inset-inline-end: 14px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: clamp(34px, 9cqw, 46px);
+  aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  border-radius: 30%;
+  background: #fff;
+  box-shadow: 0 3px 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: clamp(15px, 4cqw, 20px);
+  font-weight: 900;
+  transform: rotate(6deg);
+}
+.cover__cat { z-index: 2; }
+
+@container (min-width: 520px) {
+  .cover__shot { width: 62%; inset-inline-start: 19%; inset-block-start: 12%; }
+}
+
+/* product cover with a real screenshot */
+.prod-cover--shot { aspect-ratio: 16 / 11; }
+.prod-cover__shot {
+  position: absolute;
+  inset-block-start: 11%;
+  inset-inline-start: 7%;
+  width: 86%;
+  aspect-ratio: 16 / 10;
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0f0e0c;
+  box-shadow: 0 10px 0 rgba(18, 16, 14, .85);
+  transform: rotate(-2deg);
+}
+.prod-cover__shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.prod-cover__badge {
+  position: absolute;
+  inset-block-start: 16px;
+  inset-inline-end: 18px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  aspect-ratio: 1;
+  border: 2px solid var(--ink);
+  border-radius: 30%;
+  background: #fff;
+  box-shadow: 0 4px 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 900;
+  transform: rotate(6deg);
+}
+.prod-cover__name { z-index: 2; }
+
+/* hero: tagline under the wordmark, tighter screen, readable meta */
+.hero { min-height: min(calc(100svh - 96px), 760px); }
+.hero__tagline { max-width: 22em; margin-inline: auto; color: var(--ink); }
+.hero__actions .btn { padding: 15px 26px; font-size: 15.5px; }
+.hero__meta { font-size: 13px; }
+
+/* cards: slightly calmer tag text, nicer description rhythm */
+.card__tag { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.9em; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cover__shot, .cover__shot img { transition: none; }
+}
+
+/* ---------- dopamine accents ---------- */
+
+/* highlighter swipe behind section titles, in each section's accent */
+.section__title {
+  display: inline;
+  background: linear-gradient(transparent 58%, var(--acc-soft, var(--lime)) 58%, var(--acc-soft, var(--lime)) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-inline: .06em;
+}
+.members h2, .related h2 {
+  display: inline-block;
+  background: linear-gradient(transparent 60%, var(--lime) 60%, var(--lime) 92%, transparent 92%);
+  padding-inline: .08em;
+}
+
+/* cards lift with a coloured shadow in their category accent */
+.card:hover { box-shadow: 9px 11px 0 var(--acc, var(--ink)); border-color: var(--ink); }
+.card:hover .card__name > span:first-child {
+  background: linear-gradient(transparent 62%, var(--acc-soft, var(--lime)) 62%);
+}
+
+/* member cards: candy shadow, avatar ring in brand gradient */
+.member { transition: transform .24s var(--ease), box-shadow .24s var(--ease); }
+.member:hover { transform: translate(-3px, -4px); box-shadow: 8px 10px 0 var(--pink); }
+.member img { box-shadow: 0 0 0 3px var(--paper-2), 0 0 0 6px var(--mint); }
+.member:nth-child(2n) img { box-shadow: 0 0 0 3px var(--paper-2), 0 0 0 6px var(--pink); }
+.member:nth-child(2n):hover { box-shadow: 8px 10px 0 var(--blue); }
+
+/* footer wordmark gets the brand gradient underline */
+.footer__big {
+  display: inline-block;
+  width: fit-content;
+  color: #fff7ee;
+}
+.footer__big__mint { color: #7ff0d4; }
+.footer__big__lime { color: #d6ff4b; }
+
+/* ---------- filling the gaps ---------- */
+
+/* hero category stickers */
+.hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+  margin-block-start: 22px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px 8px 16px;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  background: var(--acc-soft);
+  box-shadow: 0 3px 0 var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  transform: rotate(var(--r, 0deg));
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.chip b {
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  background: var(--acc);
+  color: #fff;
+  font-size: 12.5px;
+}
+.chip:hover { transform: rotate(0deg) translateY(-3px); box-shadow: 0 6px 0 var(--ink); }
+.hero__meta { margin-block-start: 16px; }
+.hero { min-height: min(calc(100svh - 96px), 700px); }
+
+/* "more on the way" placeholder card */
+.card--soon {
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 100%;
+  padding: 34px 28px;
+  border-style: dashed;
+  background:
+    radial-gradient(circle at 85% 12%, var(--acc-soft) 0 22%, transparent 23%),
+    radial-gradient(circle at 10% 92%, color-mix(in srgb, var(--lime) 55%, transparent) 0 16%, transparent 17%),
+    var(--paper-2);
   box-shadow: none;
+  text-align: center;
 }
-.cover__tile--hero img, .prod-cover__tile--hero img {
-  object-fit: contain;
-  filter: drop-shadow(0 16px 26px rgba(0, 0, 0, .5));
+.card--soon:hover { box-shadow: 9px 11px 0 var(--acc); }
+.soon__plus {
+  display: grid;
+  place-items: center;
+  width: 74px;
+  height: 74px;
+  border: 2px solid var(--ink);
+  border-radius: 30%;
+  background: var(--acc);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 5px 0 var(--ink);
+  transform: rotate(-6deg);
+  transition: transform .3s var(--ease);
 }
-.prod-cover:has(.cover__bg)::before { display: none; }
-.prod-cover .cover__bg { filter: blur(34px) saturate(1.35) brightness(.9); }
+.card--soon:hover .soon__plus { transform: rotate(84deg); }
+.soon__title { font-size: clamp(20px, 4.4cqw, 28px); font-weight: 900; letter-spacing: -.03em; }
+.soon__sub { max-width: 26ch; font-size: 14px; color: var(--ink-soft); text-wrap: balance; }
+.soon__stickers { display: flex; gap: 10px; font-style: normal; }
+.soon__stickers i { font-style: normal; color: var(--pink); }
+.soon__stickers i:nth-child(2) { color: var(--blue); font-size: 10px; align-self: center; }
+.soon__stickers i:nth-child(3) { color: var(--acc); }
+
+/* team header: logo + intro side by side */
+.team-head--split {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(20px, 5vw, 70px);
+}
+.team-head__art {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 3vw, 40px);
+  border: 2px solid var(--ink);
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(127, 240, 212, .7), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255, 93, 162, .35), transparent 55%),
+    var(--paper-2);
+  box-shadow: 8px 9px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+.team-head__art .team-head__logo { width: min(100%, 320px); }
+.team-head__art .spark--a { inset-block-start: 10%; inset-inline-end: 8%; inset-inline-start: auto; }
+.team-head__art .spark--c { inset-block-end: 12%; inset-inline-start: 10%; inset-block-start: auto; }
+.team-head .lead { margin-block-start: 14px; }
+.team-head__p { max-width: 46ch; margin-block-start: 12px; font-size: 15px; color: var(--ink-soft); }
+
+/* members grid with a "join" seat */
+.members__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 18px;
+}
+.members__grid .member { max-width: none; }
+.member--join {
+  border-style: dashed;
+  box-shadow: none;
+  background: repeating-linear-gradient(-45deg, transparent 0 12px, rgba(214, 255, 75, .28) 12px 24px), var(--paper-2);
+}
+.member--join:hover { box-shadow: 8px 10px 0 var(--lime); }
+.member__plus {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 74px;
+  height: 74px;
+  border: 2px dashed var(--ink);
+  border-radius: 50%;
+  background: var(--lime);
+  font-size: 36px;
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .team-head--split { grid-template-columns: 1fr; }
+}
+.team-values-title { margin-block-start: clamp(24px, 4vw, 48px); }
+@media (min-width: 1100px) {
+  .grid > .card:first-child + .card--soon:last-child { grid-column: span 2; flex-direction: row; text-align: start; gap: 22px; }
+  .grid > .card:first-child + .card--soon:last-child .soon__stickers { display: none; }
+}
+
+/* =========================================================
+   Hero logo motion — quiet, Apple-style
+   Original vector (assets/logo.svg) is drawn untouched; a narrow
+   cyan-white sheen passes over it every 6 s, clipped to the folds.
+   ========================================================= */
+
+.logo-stage {
+  position: relative;
+  width: min(100%, 640px);
+  opacity: 0;
+  animation: logoIn .8s ease-in-out .1s forwards;
+}
+@keyframes logoIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.logo3d {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform: perspective(1100px) rotateX(0deg) rotateY(0deg);
+  transition: transform .7s ease-in-out;
+}
+
+/* the light: moves only via transform; screen blend keeps each fold's own shading */
+.sheen-layer { mix-blend-mode: screen; }
+.sheen {
+  opacity: 0;
+  transform: translateX(0);
+  animation: logoSheen 6s ease-in-out 1.3s infinite;
+}
+@keyframes logoSheen {
+  0%   { transform: translateX(0);      opacity: 0; }
+  4%   { opacity: 1; }
+  30%  { opacity: 1; }
+  34%  { transform: translateX(1500px); opacity: 0; }
+  100% { transform: translateX(1500px); opacity: 0; }
+}
+
+/* hover tilt — desktop pointers only, max 2° */
+@media (hover: hover) and (pointer: fine) {
+  .hero__mark:hover .logo3d { transform: perspective(1100px) rotateX(1.2deg) rotateY(-2deg); }
+}
+
+/* the wordmark and its rule are never part of the light */
+.wordmark span { animation-delay: calc(.5s + var(--i, 0) * .05s); }
+.wordmark__rule path { animation-delay: .85s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-stage { opacity: 1; animation: none; }
+  .sheen { animation: none !important; opacity: 0 !important; }
+  .logo3d, .hero__mark:hover .logo3d { transition: none; transform: none; }
+}
+
 

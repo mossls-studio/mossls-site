@@ -31,7 +31,6 @@ window.MOSSLS = {
   products: [
     {
       id: "suko",
-      cover: "assets/shots/suko-1.webp",
     shots: ["assets/shots/suko-1.webp", "assets/shots/suko-2.webp"],
       name: "suko",
       initial: "S",
@@ -63,7 +62,6 @@ window.MOSSLS = {
     },
     {
       id: "toolbox",
-      cover: "assets/shots/toolbox-1.webp",
     shots: ["assets/shots/toolbox-1.webp", "assets/shots/toolbox-2.webp"],
       name: "Toolbox Master",
       names: {
@@ -103,7 +101,6 @@ window.MOSSLS = {
     },
     {
       id: "kcurve",
-      cover: "assets/shots/kcurve-1.webp",
     shots: ["assets/shots/kcurve-1.webp", "assets/shots/kcurve-2.webp"],
       name: "KCurve",
       initial: "K",
@@ -135,7 +132,6 @@ window.MOSSLS = {
     },
     {
       id: "egroup",
-      cover: "assets/shots/egroup-1.webp",
     shots: ["assets/shots/egroup-1.webp", "assets/shots/egroup-2.webp"],
       name: "Egroup",
       initial: "E",
@@ -167,9 +163,6 @@ window.MOSSLS = {
     },
     {
       id: "sayaka",
-      cover: "assets/shots/sayaka-1.webp",
-      icon: "assets/sayaka.webp",
-      iconFit: "hero",
     shots: ["assets/shots/sayaka-1.webp", "assets/shots/sayaka-2.webp"],
       name: "dsh-pet-sayaka",
       initial: "D",
@@ -201,6 +194,7 @@ window.MOSSLS = {
     },
     {
       id: "mos-suite",
+    shots: ["assets/shots/mos-suite-1.webp", "assets/shots/mos-suite-2.webp"],
       name: "MOS Suite",
       initial: "M",
       repo: "mos-suite",
@@ -214,26 +208,24 @@ window.MOSSLS = {
       c2: "#7FF0D4",
       year: 2026,
       tagline: {
-        zh: "四个 EffectCraft 效果合成一个套件：阴影、抖动、收缩、灯光混合。",
-        en: "Four EffectCraft effects in one suite — shadow, shake, shrink and light mix.",
-        es: "Cuatro efectos de EffectCraft en un solo paquete: sombra, sacudida, contracción y mezcla de luz.",
-        ru: "Четыре эффекта EffectCraft в одном наборе: тень, дрожание, сжатие и смешивание света.",
-        fr: "Quatre effets EffectCraft en une suite : ombre, secousse, contraction et mélange lumineux.",
-        ar: "أربعة تأثيرات EffectCraft في حزمة واحدة: الظل والاهتزاز والانكماش ومزج الضوء."
+        zh: "四个 EffectCraft 效果打包成一套，形变与视效分组，中英双语。",
+        en: "Four EffectCraft effects in one suite — deform and VFX groups, bilingual.",
+        es: "Cuatro efectos de EffectCraft en un paquete: grupos deformar y VFX, bilingüe.",
+        ru: "Четыре эффекта EffectCraft в одном наборе — группы деформации и VFX, двуязычный.",
+        fr: "Quatre effets EffectCraft en une suite : groupes déformation et VFX, bilingue.",
+        ar: "أربعة تأثيرات EffectCraft في حزمة واحدة — مجموعات التشويه والمؤثرات، ثنائية اللغة."
       },
       desc: {
-        zh: "阴影自带渐变放大，加上一个常规抖动、一个白点式收缩、一个灯光混合；分成「MOS 形变」「MOS 视效」两组，中英双语，安装器里能分别选效果名和参数语言。AGPL-3.0 开源。",
-        en: "A shadow effect with our own gradual scale-up, a regular shake, a pinch-style shrink and a light wrap; split into MOS Deform and MOS VFX groups, bilingual (Chinese/English), with the installer choosing effect-name and parameter languages separately. Open source under AGPL-3.0.",
-        es: "Sombra con agrandamiento progresivo propio, sacudida clásica, contracción tipo pinza y mezcla de luz; repartidos en los grupos MOS Deform y MOS VFX, bilingüe, y el instalador elige por separado el idioma de los nombres y de los parámetros. Código abierto bajo AGPL-3.0.",
-        ru: "Тень с собственным постепенным увеличением, обычное дрожание, сжатие в стиле пинч и смешивание света; две группы — MOS Deform и MOS VFX, двуязычно, а установщик отдельно выбирает язык названий и параметров. Открытый код под AGPL-3.0.",
-        fr: "Ombre avec agrandissement progressif maison, secousse classique, contraction façon pince et mélange lumineux ; répartis en deux groupes, MOS Deform et MOS VFX, bilingue, l'installateur choisissant séparément la langue des noms et des paramètres. Open source sous AGPL-3.0.",
-        ar: "ظل بتكبير تدريجي خاص بنا، واهتزاز معتاد، وانكماش بنمط القرص، ومزج ضوء؛ موزّعة في مجموعتين MOS Deform وMOS VFX، ثنائية اللغة، ويختار المثبّت لغة الأسماء ولغة المعاملات على حدة. مفتوح المصدر بترخيص AGPL-3.0."
+        zh: "阴影、抖动、收缩、灯光混合四个插件；面板里分成「MOS 形变」和「MOS 视效」，安装器可选效果名和参数语言，附暗色 Material 3 界面。AGPL 开源。",
+        en: "Shadow, shake, shrink and light mix; the panel splits them into MOS Deform and MOS VFX, the installer picks effect-name and parameter languages, and it ships a dark Material 3 UI. AGPL source.",
+        es: "Sombra, sacudida, contracción y mezcla de luz; el panel los separa en MOS Deform y MOS VFX, el instalador elige los idiomas de nombres y parámetros, con interfaz oscura Material 3. Código AGPL.",
+        ru: "Тень, тряска, сжатие и смешение света; панель делит их на MOS Deform и MOS VFX, установщик выбирает язык имён и параметров, тёмный интерфейс Material 3. Исходники под AGPL.",
+        fr: "Ombre, secousse, contraction et mélange de lumière ; le panneau les sépare en MOS Deform et MOS VFX, l'installateur choisit les langues des noms et des paramètres, interface sombre Material 3. Sources AGPL.",
+        ar: "ظل واهتزاز وتقليص ومزج ضوء؛ تقسمها اللوحة إلى MOS Deform وMOS VFX، ويختار المثبّت لغتي الأسماء والمعاملات، بواجهة داكنة بنمط Material 3. المصدر تحت AGPL."
       }
     },
     {
       id: "fustimage",
-      cover: "assets/shots/fustimage-1.webp",
-      icon: "assets/icons/fustimage.png",
     shots: ["assets/shots/fustimage-1.webp", "assets/shots/fustimage-2.webp"],
       name: "Fustimage",
       initial: "F",
@@ -265,8 +257,6 @@ window.MOSSLS = {
     },
     {
       id: "muxvideo",
-      cover: "assets/shots/muxvideo-1.webp",
-      icon: "assets/icons/muxvideo.png",
     shots: ["assets/shots/muxvideo-1.webp", "assets/shots/muxvideo-2.webp", "assets/shots/muxvideo-3.webp"],
       name: "MuxVideo",
       initial: "M",
@@ -298,8 +288,6 @@ window.MOSSLS = {
     },
     {
       id: "colorms",
-      cover: "assets/shots/colorms-1.webp",
-      icon: "assets/icons/colorms.png",
     shots: ["assets/shots/colorms-1.webp", "assets/shots/colorms-2.webp"],
       name: "Colorms",
       initial: "C",
@@ -344,12 +332,10 @@ window.MOSSLS = {
     },
     {
       name: "Lonelnx_BianJIe",
-      roleKey: "team.roleFounder",
-      avatar: "assets/avatar-lonelnx.webp",
+      roleKey: "team.role2",
+      avatar: "https://avatars.githubusercontent.com/u/281612827?v=4&s=240",
       github: "https://github.com/bingkunwang01-cmd"
     }
   ]
 };
-
-
 
