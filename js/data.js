@@ -193,6 +193,38 @@ window.MOSSLS = {
       }
     },
     {
+      id: "mos-suite",
+    shots: ["assets/shots/mos-suite-1.webp", "assets/shots/mos-suite-2.webp"],
+      name: "MOS Suite",
+      initial: "M",
+      repo: "mos-suite",
+      org: "mossls-studio",
+      category: "plugins",
+      version: "v1.1.0",
+      platform: "EffectCraft",
+      license: "AGPL-3.0",
+      tags: ["EffectCraft", "wasm", "Rust"],
+      c1: "#1E9BF0",
+      c2: "#7FF0D4",
+      year: 2026,
+      tagline: {
+        zh: "四个 EffectCraft 效果打包成一套，形变与视效分组，中英双语。",
+        en: "Four EffectCraft effects in one suite — deform and VFX groups, bilingual.",
+        es: "Cuatro efectos de EffectCraft en un paquete: grupos deformar y VFX, bilingüe.",
+        ru: "Четыре эффекта EffectCraft в одном наборе — группы деформации и VFX, двуязычный.",
+        fr: "Quatre effets EffectCraft en une suite : groupes déformation et VFX, bilingue.",
+        ar: "أربعة تأثيرات EffectCraft في حزمة واحدة — مجموعات التشويه والمؤثرات، ثنائية اللغة."
+      },
+      desc: {
+        zh: "阴影、抖动、收缩、灯光混合四个插件；面板里分成「MOS 形变」和「MOS 视效」，安装器可选效果名和参数语言，附暗色 Material 3 界面。AGPL 开源。",
+        en: "Shadow, shake, shrink and light mix; the panel splits them into MOS Deform and MOS VFX, the installer picks effect-name and parameter languages, and it ships a dark Material 3 UI. AGPL source.",
+        es: "Sombra, sacudida, contracción y mezcla de luz; el panel los separa en MOS Deform y MOS VFX, el instalador elige los idiomas de nombres y parámetros, con interfaz oscura Material 3. Código AGPL.",
+        ru: "Тень, тряска, сжатие и смешение света; панель делит их на MOS Deform и MOS VFX, установщик выбирает язык имён и параметров, тёмный интерфейс Material 3. Исходники под AGPL.",
+        fr: "Ombre, secousse, contraction et mélange de lumière ; le panneau les sépare en MOS Deform et MOS VFX, l'installateur choisit les langues des noms et des paramètres, interface sombre Material 3. Sources AGPL.",
+        ar: "ظل واهتزاز وتقليص ومزج ضوء؛ تقسمها اللوحة إلى MOS Deform وMOS VFX، ويختار المثبّت لغتي الأسماء والمعاملات، بواجهة داكنة بنمط Material 3. المصدر تحت AGPL."
+      }
+    },
+    {
       id: "fustimage",
     shots: ["assets/shots/fustimage-1.webp", "assets/shots/fustimage-2.webp"],
       name: "Fustimage",

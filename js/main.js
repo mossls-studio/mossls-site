@@ -7,7 +7,7 @@
   var I18N = window.I18N || {};
   var DEFAULT_LANG = "zh";
   var STORE_KEY = "mossls.lang";
-  var REPO_BASE = "https://github.com/" + (DATA.orgLabel || "KOGGUA-EDIT") + "/";
+  var REPO_ROOT = "https://github.com/";
 
   var lang = DEFAULT_LANG;
   var io = null;
@@ -37,7 +37,9 @@
   function catOf(p) {
     return DATA.categories.filter(function (c) { return c.id === p.category; })[0] || DATA.categories[0];
   }
-  function repoURL(p) { return REPO_BASE + p.repo; }
+  function repoURL(p) {
+    return REPO_ROOT + (p.org || DATA.orgLabel || "KOGGUA-EDIT") + "/" + p.repo;
+  }
   function releaseURL(p) { return repoURL(p) + "/releases/latest"; }
 
   var ICON_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
