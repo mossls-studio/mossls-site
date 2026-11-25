@@ -76,7 +76,16 @@ window.I18N = {
     "team.joinSub": "想一起做？在 GitHub 上找到我们。",
     "footer.tagline": "小而好用的工具，一起做。",
     "footer.rights": "保留所有权利。",
-    "a11y.skip": "跳到主要内容"
+    "a11y.skip": "跳到主要内容",
+    "nav.theme": "切换亮色 / 暗夜模式",
+    "hero.logoReplay": "mossls — 点击重播 Logo 笔画动画",
+    "mos.bannerBadge": "BORN FOR MAD",
+    "mos.bannerTitle": "整个套件，为 MAD 而生",
+    "mos.bannerSub": "11 款面向 MAD / AMV 剪辑场景从零打磨的 EffectCraft 原生插件，涵盖形变、液态、视效、效果、模糊五大分组；支持中文 / 英文效果名与参数独立切换，自带 Material Design 3 Expressive 分步安装器。",
+    "mos.pluginsTitle": "套件内 11 款插件与效果预览",
+    "mos.allGroups": "全部",
+    "mos.source": "源码 ↗",
+    "common.zoomHint": "点击图片查看大图"
   },
 
   en: {
@@ -146,7 +155,16 @@ window.I18N = {
     "team.joinSub": "Want to build with us? Find us on GitHub.",
     "footer.tagline": "Small tools, made together.",
     "footer.rights": "All rights reserved.",
-    "a11y.skip": "Skip to content"
+    "a11y.skip": "Skip to content",
+    "nav.theme": "Toggle light / dark mode",
+    "hero.logoReplay": "mossls — click to replay logo animation",
+    "mos.bannerBadge": "BORN FOR MAD",
+    "mos.bannerTitle": "The whole suite, born for MAD",
+    "mos.bannerSub": "11 native EffectCraft effects crafted from scratch for MAD & AMV editing across five panel groups — Deform, Liquid, VFX, Effects and Blur — with independent bilingual UI and a Material Design 3 Expressive installer.",
+    "mos.pluginsTitle": "All 11 Plugins & Effect Previews",
+    "mos.allGroups": "All",
+    "mos.source": "Source ↗",
+    "common.zoomHint": "Click image to zoom"
   },
 
   es: {
@@ -216,7 +234,16 @@ window.I18N = {
     "team.joinSub": "¿Quieres construir con nosotros? Búscanos en GitHub.",
     "footer.tagline": "Herramientas pequeñas, hechas en equipo.",
     "footer.rights": "Todos los derechos reservados.",
-    "a11y.skip": "Saltar al contenido"
+    "a11y.skip": "Saltar al contenido",
+    "nav.theme": "Cambiar modo claro / oscuro",
+    "hero.logoReplay": "mossls — clic para repetir la animación",
+    "mos.bannerBadge": "BORN FOR MAD",
+    "mos.bannerTitle": "Toda la suite, nacida para MAD",
+    "mos.bannerSub": "11 efectos nativos de EffectCraft creados para edición MAD / AMV en cinco grupos: Deformar, Líquido, VFX, Efectos y Desenfoque.",
+    "mos.pluginsTitle": "Los 11 complementos y vistas previas",
+    "mos.allGroups": "Todos",
+    "mos.source": "Código ↗",
+    "common.zoomHint": "Clic para ampliar"
   },
 
   ru: {
@@ -286,7 +313,16 @@ window.I18N = {
     "team.joinSub": "Хотите делать с нами? Найдите нас на GitHub.",
     "footer.tagline": "Маленькие инструменты, сделанные вместе.",
     "footer.rights": "Все права защищены.",
-    "a11y.skip": "Перейти к содержимому"
+    "a11y.skip": "Перейти к содержимому",
+    "nav.theme": "Переключить светлую / тёмную тему",
+    "hero.logoReplay": "mossls — нажмите, чтобы повторить анимацию",
+    "mos.bannerBadge": "BORN FOR MAD",
+    "mos.bannerTitle": "Весь набор создан для MAD",
+    "mos.bannerSub": "11 нативных эффектов EffectCraft, созданных специально для MAD / AMV-монтажа в пяти группах: деформация, жидкость, VFX, эффекты и размытие.",
+    "mos.pluginsTitle": "Все 11 плагинов и превью эффектов",
+    "mos.allGroups": "Все",
+    "mos.source": "Исходники ↗",
+    "common.zoomHint": "Нажмите для увеличения"
   },
 
   fr: {
@@ -356,7 +392,16 @@ window.I18N = {
     "team.joinSub": "Envie de construire avec nous ? Retrouvez-nous sur GitHub.",
     "footer.tagline": "De petits outils, faits ensemble.",
     "footer.rights": "Tous droits réservés.",
-    "a11y.skip": "Aller au contenu"
+    "a11y.skip": "Aller au contenu",
+    "nav.theme": "Basculer le mode clair / sombre",
+    "hero.logoReplay": "mossls — cliquer pour rejouer l'animation",
+    "mos.bannerBadge": "BORN FOR MAD",
+    "mos.bannerTitle": "Toute la suite, née pour le MAD",
+    "mos.bannerSub": "11 effets natifs EffectCraft pensés pour le montage MAD / AMV en cinq groupes : Déformation, Liquide, VFX, Effets et Flou.",
+    "mos.pluginsTitle": "Les 11 plugins et aperçus d'effets",
+    "mos.allGroups": "Tous",
+    "mos.source": "Code ↗",
+    "common.zoomHint": "Cliquer pour agrandir"
   },
 
   ar: {
@@ -426,7 +471,16 @@ window.I18N = {
     "team.joinSub": "تريد البناء معنا؟ تجدنا على GitHub.",
     "footer.tagline": "أدوات صغيرة، صنعناها معًا.",
     "footer.rights": "جميع الحقوق محفوظة.",
-    "a11y.skip": "انتقل إلى المحتوى"
+    "a11y.skip": "انتقل إلى المحتوى",
+    "nav.theme": "تبديل الوضع الفاتح / الداكن",
+    "hero.logoReplay": "mossls — انقر لإعادة تشغيل الشعار",
+    "mos.bannerBadge": "BORN FOR MAD",
+    "mos.bannerTitle": "الحزمة كاملة صُنعت لأجل MAD",
+    "mos.bannerSub": "11 تأثيرًا أصليًا لـ EffectCraft مصممة خصيصًا لمونتاج MAD وAMV عبر خمس مجموعات: التشويه والسوائل والمؤثرات البصرية والتأثيرات والضبابية.",
+    "mos.pluginsTitle": "الإضافات الـ 11 ومعاينات التأثير",
+    "mos.allGroups": "الكل",
+    "mos.source": "المصدر ↗",
+    "common.zoomHint": "انقر للتكبير"
   }
 };
 

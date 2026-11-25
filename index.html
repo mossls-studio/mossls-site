@@ -6,14 +6,14 @@
 <title>mossls — 小而好用的开源工具</title>
 <meta name="description" content="mossls 的开源工具集合：脚本、插件、软件。全部公开在 GitHub。">
 <meta name="theme-color" content="#fff7ee">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="mossls">
 <meta property="og:description" content="Small tools, made together.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
 <link rel="stylesheet" href="css/style.css">
-<script>document.documentElement.classList.add('js');</script>
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var t=localStorage.getItem('mossls.theme');if(t!=='dark'&&t!=='light')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';r.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==='dark'?'#111116':'#fff7ee';}catch(e){}})();</script>
 </head>
 <body data-page="home">
 <a class="skip" href="#main" data-i18n="a11y.skip">跳到主要内容</a>
@@ -30,13 +30,20 @@
       <input class="nav__searchinput" id="navQ" type="search" name="q" enterkeyhint="search" autocomplete="off" spellcheck="false" aria-label="Search" data-i18n-placeholder="search.placeholder" data-i18n-aria="search.label">
     </form>
 
-    <div class="lang" id="lang">
-      <button class="lang__btn" id="langBtn" type="button" aria-expanded="false" aria-haspopup="listbox" data-i18n-aria="nav.language">
-        <svg class="lang__globe" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2.2 2.1 3.4 4.7 3.4 7.5S12.2 15.4 10 17.5C7.8 15.4 6.6 12.8 6.6 10S7.8 4.6 10 2.5z"/></svg>
-        <span id="langCurrent">中文</span>
-        <span class="lang__code" id="langCode">ZH</span>
+    <div class="nav__tools">
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="切换暗夜模式" data-i18n-aria="nav.theme">
+        <svg class="theme-btn__ico theme-btn__ico--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg>
+        <svg class="theme-btn__ico theme-btn__ico--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
       </button>
-      <ul class="lang__menu" id="langMenu" role="listbox"></ul>
+
+      <div class="lang" id="lang">
+        <button class="lang__btn" id="langBtn" type="button" aria-expanded="false" aria-haspopup="listbox" data-i18n-aria="nav.language">
+          <svg class="lang__globe" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M2.5 10h15M10 2.5c2.2 2.1 3.4 4.7 3.4 7.5S12.2 15.4 10 17.5C7.8 15.4 6.6 12.8 6.6 10S7.8 4.6 10 2.5z"/></svg>
+          <span id="langCurrent">中文</span>
+          <span class="lang__code" id="langCode">ZH</span>
+        </button>
+        <ul class="lang__menu" id="langMenu" role="listbox"></ul>
+      </div>
     </div>
   </header>
 </div>
@@ -44,8 +51,9 @@
 <main id="main">
   <section class="hero">
     <div class="hero__mark">
-      <div class="logo-stage">
-        <svg class="logo3d" viewBox="20 225 1040 590" role="img" aria-label="mossls">
+      <div class="logo-stage" id="logoStage" role="button" tabindex="0" aria-label="mossls — 点击重播 Logo 动画" data-i18n-aria="hero.logoReplay">
+        <canvas class="logo-particles" id="logoParticles" aria-hidden="true"></canvas>
+        <svg class="logo3d" id="logoSvg" viewBox="20 225 1040 590" role="img" aria-label="mossls">
           <defs>
             <!-- outlines of the five folds, taken verbatim from assets/logo.svg; used only to keep the light inside the logo -->
             <clipPath id="logoShape">
@@ -55,6 +63,25 @@
             <path d="M92.699 734.672 L318.515 336.584 C332.483 310.976 353.435 294.68 381.371 294.68 L430.259 294.68 C455.867 294.68 472.163 303.992 488.459 322.616 L623.483 480.92 Z"/>
             <path d="M528.035 702.08 L728.243 427.376 C746.867 404.096 772.475 392.456 802.739 392.456 L842.315 392.456 C867.923 392.456 884.219 404.096 898.187 425.048 L728.243 695.096 C711.947 723.032 686.339 734.672 651.419 734.672 L586.235 734.672 C560.627 734.672 542.003 725.36 528.035 702.08 Z"/>
             </clipPath>
+            <mask id="logoRevealMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1080" height="1080">
+              <rect x="0" y="0" width="1080" height="1080" fill="#000"/>
+              <path id="logoRevealPath"
+                d="M95 732 L265 690 L355 344 Q405 276 462 342 L592 686 Q626 724 658 676 L788 436 Q840 382 882 448 L964 652"
+                fill="none" stroke="#fff" stroke-width="360" stroke-linecap="round" stroke-linejoin="round"/>
+            </mask>
+            <linearGradient id="logoTraceGrad" x1="100" y1="700" x2="960" y2="420" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#d6ff4b"/>
+              <stop offset=".35" stop-color="#7ff0d4"/>
+              <stop offset=".7" stop-color="#2f5bff"/>
+              <stop offset="1" stop-color="#ff5da2"/>
+            </linearGradient>
+            <filter id="traceGlow" x="-25%" y="-25%" width="150%" height="150%">
+              <feGaussianBlur stdDeviation="12" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
             <linearGradient id="sheenGrad" x1="0" y1="0" x2="1" y2="0">
               <stop offset="0" stop-color="#e6fffb" stop-opacity="0"/>
               <stop offset=".38" stop-color="#e6fffb" stop-opacity="0"/>
@@ -63,12 +90,17 @@
               <stop offset="1" stop-color="#e6fffb" stop-opacity="0"/>
             </linearGradient>
           </defs>
-          <image href="assets/logo.svg" x="0" y="0" width="1080" height="1080"/>
-          <g class="sheen-layer" clip-path="url(#logoShape)" aria-hidden="true">
-            <g transform="rotate(16 540 540)">
-              <rect class="sheen" x="-330" y="-240" width="260" height="1560" fill="url(#sheenGrad)"/>
+          <g id="logoArtGroup" class="logo3d__art" mask="url(#logoRevealMask)">
+            <image href="assets/logo.svg" x="0" y="0" width="1080" height="1080"/>
+            <g class="sheen-layer" clip-path="url(#logoShape)" aria-hidden="true">
+              <g transform="rotate(16 540 540)">
+                <rect class="sheen" x="-330" y="-240" width="260" height="1560" fill="url(#sheenGrad)"/>
+              </g>
             </g>
           </g>
+          <path id="logoTracePath" class="logo3d__trace"
+            d="M110 730 L345 344 Q405 276 462 342 L592 686 Q626 724 658 676 L788 436 Q840 382 882 448 L954 646"
+            fill="none" stroke="url(#logoTraceGrad)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" filter="url(#traceGlow)" aria-hidden="true"/>
         </svg>
       </div>
       <span class="spark spark--a" aria-hidden="true">✦</span>

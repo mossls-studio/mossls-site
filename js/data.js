@@ -101,12 +101,12 @@ window.MOSSLS = {
     },
     {
       id: "kcurve",
-    shots: ["assets/shots/kcurve-1.webp", "assets/shots/kcurve-2.webp"],
+      shots: ["assets/shots/kcurve-1.webp", "assets/shots/kcurve-2.webp"],
       name: "KCurve",
       initial: "K",
       repo: "KCurve",
       category: "scripts",
-      version: "v2.0.2",
+      version: "v2.0.10",
       platform: "EffectCraft",
       license: "MIT",
       tags: ["EffectCraft", "ScriptUI"],
@@ -194,35 +194,239 @@ window.MOSSLS = {
     },
     {
       id: "mos-suite",
-    shots: ["assets/shots/mos-suite-1.webp", "assets/shots/mos-suite-2.webp"],
+      shots: ["assets/shots/mos-suite-1.webp", "assets/shots/mos-suite-2.webp"],
       name: "MOS Suite",
+      names: {
+        zh: "MOS 套件",
+        en: "MOS Suite",
+        es: "MOS Suite",
+        ru: "MOS Suite",
+        fr: "MOS Suite",
+        ar: "MOS Suite"
+      },
       initial: "M",
       repo: "mos-suite",
       org: "mossls-studio",
       category: "plugins",
-      version: "v1.1.0",
+      version: "v1.5.0",
       platform: "EffectCraft",
       license: "AGPL-3.0",
-      tags: ["EffectCraft", "wasm", "Rust"],
+      tags: ["EffectCraft", "MAD", "WASM", "Rust"],
       c1: "#1E9BF0",
       c2: "#7FF0D4",
       year: 2026,
       tagline: {
-        zh: "四个 EffectCraft 效果打包成一套，形变与视效分组，中英双语。",
-        en: "Four EffectCraft effects in one suite — deform and VFX groups, bilingual.",
-        es: "Cuatro efectos de EffectCraft en un paquete: grupos deformar y VFX, bilingüe.",
-        ru: "Четыре эффекта EffectCraft в одном наборе — группы деформации и VFX, двуязычный.",
-        fr: "Quatre effets EffectCraft en une suite : groupes déformation et VFX, bilingue.",
-        ar: "أربعة تأثيرات EffectCraft في حزمة واحدة — مجموعات التشويه والمؤثرات، ثنائية اللغة."
+        zh: "为 MAD 而生的 11 款 EffectCraft 视效套件，五大分组一站配齐。",
+        en: "11 EffectCraft effects born for MAD — five panel groups in one suite.",
+        es: "11 efectos de EffectCraft nacidos para MAD: cinco grupos en una suite.",
+        ru: "11 эффектов EffectCraft, созданных для MAD — пять групп в одном наборе.",
+        fr: "11 effets EffectCraft nés pour le MAD — cinq groupes dans une seule suite.",
+        ar: "11 تأثيرًا لـ EffectCraft صُنعت لأجل MAD — خمس مجموعات في حزمة واحدة."
       },
       desc: {
-        zh: "阴影、抖动、收缩、灯光混合四个插件；面板里分成「MOS 形变」和「MOS 视效」，安装器可选效果名和参数语言，附暗色 Material 3 界面。AGPL 开源。",
-        en: "Shadow, shake, shrink and light mix; the panel splits them into MOS Deform and MOS VFX, the installer picks effect-name and parameter languages, and it ships a dark Material 3 UI. AGPL source.",
-        es: "Sombra, sacudida, contracción y mezcla de luz; el panel los separa en MOS Deform y MOS VFX, el instalador elige los idiomas de nombres y parámetros, con interfaz oscura Material 3. Código AGPL.",
-        ru: "Тень, тряска, сжатие и смешение света; панель делит их на MOS Deform и MOS VFX, установщик выбирает язык имён и параметров, тёмный интерфейс Material 3. Исходники под AGPL.",
-        fr: "Ombre, secousse, contraction et mélange de lumière ; le panneau les sépare en MOS Deform et MOS VFX, l'installateur choisit les langues des noms et des paramètres, interface sombre Material 3. Sources AGPL.",
-        ar: "ظل واهتزاز وتقليص ومزج ضوء؛ تقسمها اللوحة إلى MOS Deform وMOS VFX، ويختار المثبّت لغتي الأسماء والمعاملات، بواجهة داكنة بنمط Material 3. المصدر تحت AGPL."
-      }
+        zh: "整个套件为 MAD / AMV 剪辑而生：涵盖形变（抖动、变形·白点）、液态（涟漪、雨滴、透镜）、视效（阴影、灯光混合、打光）、效果（扫光、消散）与模糊五大分组共 11 款原生插件。附 Material Design 3 Expressive 分步安装器与手动安装包，支持效果名与参数语言独立切换，AGPL-3.0 开源。",
+        en: "Built from the ground up for MAD & AMV editing: 11 native EffectCraft plugins across five groups — Deform (Shake, Warp), Liquid (Ripple, Rain, Lens), VFX (Shadow, Light Mix, Rim Light), Effects (Light Sweep, Dissolve) and Blur. Ships with a Material Design 3 Expressive step-by-step installer, manual package, and independent bilingual naming/parameters. AGPL-3.0 open source.",
+        es: "Creada desde cero para edición MAD / AMV: 11 complementos nativos de EffectCraft en cinco grupos (Deformar, Líquido, VFX, Efectos y Desenfoque) con instalador Material Design 3 Expressive y soporte bilingüe. Código abierto AGPL-3.0.",
+        ru: "Создано с нуля для MAD / AMV-монтажа: 11 нативных плагинов EffectCraft в пяти группах (деформация, жидкость, VFX, эффекты, размытие), пошаговый установщик Material Design 3 Expressive и независимая двуязычная локализация. Открытый код AGPL-3.0.",
+        fr: "Conçue de zéro pour le montage MAD / AMV : 11 plugins natifs EffectCraft en cinq groupes (Déformation, Liquide, VFX, Effets, Flou) avec installateur Material Design 3 Expressive et bilinguisme indépendant. Open source AGPL-3.0.",
+        ar: "حزمة مصممة بالكامل لمونتاج MAD وAMV: 11 إضافة أصلية لـ EffectCraft عبر خمس مجموعات مع مثبّت Material Design 3 Expressive ودعم ثنائي اللغة، مفتوحة المصدر تحت AGPL-3.0."
+      },
+      suiteGroups: [
+        { id: "deform", zh: "MOS 形变", en: "MOS Deform", accent: "#FF5DA2" },
+        { id: "liquid", zh: "MOS 液态", en: "MOS Liquid", accent: "#1E9BF0" },
+        { id: "vfx", zh: "MOS 视效", en: "MOS VFX", accent: "#9B6BFF" },
+        { id: "effects", zh: "MOS 效果", en: "MOS Effects", accent: "#FF8A3D" },
+        { id: "blur", zh: "MOS 模糊", en: "MOS Blur", accent: "#00B894" }
+      ],
+      suitePlugins: [
+        {
+          id: "mos.shake",
+          group: "deform",
+          name: { zh: "抖动 Shake", en: "Shake" },
+          version: "v1.2.0",
+          runtime: "WASM",
+          shot: "assets/shots/mos/shake.webp",
+          repo: "https://github.com/mossls-studio/mos-shake",
+          highlights: {
+            zh: ["三轴手持震动", "8 采样运动模糊", "边缘拼贴防穿帮"],
+            en: ["3-axis camera shake", "8-sample motion blur", "Edge tiling"]
+          },
+          desc: {
+            zh: "MAD 卡点与节奏转场主力：噪声驱动的 X/Y/Z 三轴位移与旋转，频率与平滑度独立可调，内置运动模糊和边缘拼贴，不污染图层变换属性。",
+            en: "Essential for MAD beat-sync hits and transitions: noise-driven 3-axis displacement & rotation with independent rate/smoothness, 8-sample motion blur, and edge tiling without touching layer transforms."
+          }
+        },
+        {
+          id: "mos.ae.warp",
+          group: "deform",
+          name: { zh: "变形·白点 Warp", en: "Warp" },
+          version: "v1.3.0",
+          runtime: "WASM",
+          shot: "assets/shots/mos/warp.webp",
+          repo: "https://github.com/mossls-studio/mos-shrink",
+          highlights: {
+            zh: ["四角钉住鱼眼形变", "可拖锚点中心", "三档抗锯齿画质"],
+            en: ["Pinned-corner fisheye", "Draggable anchor", "3 quality modes"]
+          },
+          desc: {
+            zh: "复刻经典白点鱼眼张力感：纯多项式缩放让四条边与四角纹丝不动，适合 MAD 节奏吸放、冲击波膨胀和转场弹性形变，体积仅约 3 KB。",
+            en: "Classic pinned-corner fisheye punch for MAD beat swells and elastic transitions: pure polynomial scaling keeps all four edges locked with zero border gaps."
+          }
+        },
+        {
+          id: "mos.ripple",
+          group: "liquid",
+          name: { zh: "涟漪 Ripple", en: "Ripple" },
+          version: "v1.1.0",
+          runtime: "WASM",
+          shot: "assets/shots/mos/ripple.webp",
+          repo: "https://github.com/mossls-studio/mos-ripple",
+          highlights: {
+            zh: ["同心波纹折射", "波峰侧面高光", "羽化与边缘淡出"],
+            en: ["Concentric refraction", "Crest highlights", "Soft edge fade"]
+          },
+          desc: {
+            zh: "水面同心波纹冲击效果：中心平静自然、波峰带柔和侧面高光与折射，告别硬边锯齿，轻松做出 MAD 鼓点扩散与水波转场。",
+            en: "Concentric water ripples with calm centers, soft crest side-lighting, and smooth refraction — ideal for MAD beat-drop shockwaves and dreamlike transitions."
+          }
+        },
+        {
+          id: "mos.rain",
+          group: "liquid",
+          name: { zh: "雨滴 Rain", en: "Rain" },
+          version: "v5.0.0",
+          runtime: "Rust Helper",
+          shot: "assets/shots/mos/rain.webp",
+          repo: "https://github.com/mossls-studio/mos-rain",
+          highlights: {
+            zh: ["重力滑落水滴", "折射色散雾气", "自定义贴图图层"],
+            en: ["Gravity raindrops", "Dispersion & fog", "Custom map layer"]
+          },
+          desc: {
+            zh: "情绪向 MAD 氛围神器：支持程序生成大/小/长条重力水滴与色散雾气，也可直接读取自定义图层亮度或 Alpha 提取液态折射边缘。",
+            en: "Atmospheric rain-on-glass shader for emotional MADs: procedural gravity droplets with dispersion and fog, plus custom layer input by luma or alpha."
+          }
+        },
+        {
+          id: "mos.lens",
+          group: "liquid",
+          name: { zh: "透镜 Lens", en: "Lens" },
+          version: "v2.0.0",
+          runtime: "Rust Helper",
+          shot: "assets/shots/mos/lens.webp",
+          repo: "https://github.com/mossls-studio/mos-lens",
+          highlights: {
+            zh: ["6 种液态玻璃形状", "中心放大镜折射", "镜内过渡羽化"],
+            en: ["6 glass shapes", "Center magnification", "Inner feathering"]
+          },
+          desc: {
+            zh: "多形态液态玻璃透镜：内置圆、椭圆、多边形、星形、心形及自定义图层 6 种形态，支持中心放大、镜内柔和过渡与高光折射，平面排版和镜头强调都出彩。",
+            en: "Multi-shape liquid glass lens supporting circle, ellipse, polygon, star, heart, and custom layers — with center magnification, soft inner feathering, and specular refraction."
+          }
+        },
+        {
+          id: "mos.shadow",
+          group: "vfx",
+          name: { zh: "阴影 Shadow", en: "Shadow" },
+          version: "v0.6.2",
+          runtime: "WASM",
+          shot: "assets/shots/mos/shadow.webp",
+          repo: "https://github.com/mossls-studio/mos-shadow",
+          highlights: {
+            zh: ["长投影与弯曲变形", "柔和淡出模糊", "继承图层原色"],
+            en: ["Long & curved shadow", "Smooth fade & blur", "Layer color inherit"]
+          },
+          desc: {
+            zh: "文字与立绘立体感利器：支持长阴影延展、平滑弯曲、距离模糊衰减与原图层色彩混合，让静止画 MAD 和标题排版瞬间跳出画面。",
+            en: "Stylized depth for typography and character cutouts: long shadows with smooth bending, distance blur falloff, and layer-color tinting."
+          }
+        },
+        {
+          id: "mos.lightwrap",
+          group: "vfx",
+          name: { zh: "灯光混合 Light Mix", en: "Light Mix" },
+          version: "v1.5.0",
+          runtime: "Rust Helper",
+          shot: "assets/shots/mos/lightmix.webp",
+          repo: "https://github.com/mossls-studio/mos-lightmix",
+          highlights: {
+            zh: ["真实背景溢光包裹", "多种混合模式", "人物融图专用"],
+            en: ["Background light wrap", "Blend modes", "Seamless compositing"]
+          },
+          desc: {
+            zh: "抠图融进高光背景的秘密武器：提取背景光源并柔化包裹到前景边缘，消除生硬白边，让 MAD 人物立绘与光效背景浑然一体。",
+            en: "Blend character cutouts seamlessly into bright backdrops: samples background illumination and wraps soft rim spillover around foreground edges."
+          }
+        },
+        {
+          id: "mos.rimlight",
+          group: "vfx",
+          name: { zh: "打光 Rim Light", en: "Rim Light" },
+          version: "v1.0.0",
+          runtime: "Rust Helper",
+          shot: "assets/shots/mos/rimlight.webp",
+          repo: "https://github.com/mossls-studio/mos-suite",
+          highlights: {
+            zh: ["2D 偏移边缘打光", "四色渐变叠加", "独立轮廓发光"],
+            en: ["2D offset rim light", "4-color gradient", "Independent glow"]
+          },
+          desc: {
+            zh: "动漫人物轮廓高光专属插件：基于 Alpha 边缘偏移生成锐利逆光轮廓，支持四色渐变映射、拼贴与独立发光，一键拉满高燃画面质感。",
+            en: "Anime-style backlit rim lighting: 2D alpha-offset edge light with 4-color gradient overlay, tiling, and independent bloom for dramatic character highlights."
+          }
+        },
+        {
+          id: "mos.lightsweep",
+          group: "effects",
+          name: { zh: "扫光 Light Sweep", en: "Light Sweep" },
+          version: "v1.2.0",
+          runtime: "Rust Helper",
+          shot: "assets/shots/mos/lightsweep.webp",
+          repo: "https://github.com/mossls-studio/mos-suite",
+          highlights: {
+            zh: ["直线 / 径向扫光", "独立轮廓高光", "双色高速辉光"],
+            en: ["Linear & radial sweep", "Edge highlight", "Dual-color fast glow"]
+          },
+          desc: {
+            zh: "标题与 Logo 闪耀标配：支持直线与径向循环扫光、双色偏移渐变与独立轮廓边缘提亮，配合高速发光让片头和转场卡片闪耀夺目。",
+            en: "Signature metallic sheen for titles and logos: linear or radial light sweeps with dual-color offset gradients, independent edge catchlights, and high-speed bloom."
+          }
+        },
+        {
+          id: "mos.dissolve",
+          group: "effects",
+          name: { zh: "消散 Dissolve", en: "Dissolve" },
+          version: "v1.0.0",
+          runtime: "Rust Helper",
+          shot: "assets/shots/mos/dissolve.webp",
+          repo: "https://github.com/mossls-studio/mos-suite",
+          highlights: {
+            zh: ["粒子生成 / 像素分离", "线性 / 杂色 / 自定义遮罩", "旋度风场与尾端变色"],
+            en: ["Particles & pixel split", "Linear/noise/custom mask", "Curl wind & color fade"]
+          },
+          desc: {
+            zh: "高潮收尾与情绪退场大招：支持粒子飞散与像素块剥离双模式，内置旋度湍流风场、重力爆散与尾端发光变色，未消散区域保持 100% 锐利。",
+            en: "Cinematic disintegration for MAD climaxes and outros: dual particle-emission and pixel-separation modes with curl-noise wind, gravity burst, and glowing color-shifted trails."
+          }
+        },
+        {
+          id: "mos.blur",
+          group: "blur",
+          name: { zh: "模糊 Blur", en: "Blur" },
+          version: "v0.1.0",
+          runtime: "WASM",
+          shot: "assets/shots/mos/blur.webp",
+          repo: "https://github.com/mossls-studio/mos-suite",
+          highlights: {
+            zh: ["矢量蒙版距离场", "真正内容边缘模糊", "保留原不透明度"],
+            en: ["Vector mask SDF", "True edge resampling", "Keep original alpha"]
+          },
+          desc: {
+            zh: "按图层蒙版做「真·边缘模糊」：直接读取矢量蒙版计算距离场，让画面内容顺着边界真实重采样晕开而非简单降透明，景深与局部柔焦干净无重影。",
+            en: "True mask-driven edge blur: computes a signed distance field directly from vector masks so edge pixels genuinely resample and soften instead of merely fading alpha."
+          }
+        }
+      ]
     },
     {
       id: "fustimage",
@@ -257,12 +461,12 @@ window.MOSSLS = {
     },
     {
       id: "muxvideo",
-    shots: ["assets/shots/muxvideo-1.webp", "assets/shots/muxvideo-2.webp", "assets/shots/muxvideo-3.webp"],
+      shots: ["assets/shots/muxvideo-1.webp", "assets/shots/muxvideo-2.webp", "assets/shots/muxvideo-3.webp"],
       name: "MuxVideo",
       initial: "M",
       repo: "MuxVideo",
       category: "software",
-      version: "v0.1.45",
+      version: "v0.1.47",
       platform: "Windows",
       license: "MIT",
       tags: ["Windows", "Rust", "libmpv"],
